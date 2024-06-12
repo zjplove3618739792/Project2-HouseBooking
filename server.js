@@ -17,6 +17,10 @@ const applicationsController = require('./controllers/applications.js');
 
 
 const port = process.env.PORT ? process.env.PORT : '3000';
+const path = require('path')
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 mongoose.connect(process.env.MONGODB_URI);
 

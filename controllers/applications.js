@@ -49,8 +49,11 @@ router.post('/', async (req, res) => {
     try {
       // Look up the user from req.session
       const currentUser = await User.findById(req.session.user._id);
+      console.log('current userfiguguygbircvbkutcuvytivbuycrvbiyrcvuyvg' ,currentUser)
       // Find the application by the applicationId supplied from req.params
       const application = currentUser.applications.id(req.params.applicationId);
+      console.log('application srdtfydtfygufdtfyguhugfyguhifyguhij',application)
+
       // Render the show view, passing the application data in the context object
       res.render('applications/show.ejs', {
         application: application,
