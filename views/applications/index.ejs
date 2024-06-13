@@ -4,23 +4,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Apps</title>
+  <title>Skyrockit</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-  <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>Your Apps</h1>
-    <a href="/users/<%=user._id%>/applications/new">Add an App</a>
-    <!-- Add the following: -->
-    <ul>
-        <% applications.forEach((application)=>{ %>
-          <li>
-            <!-- Add a link around each title and company, directing to the 'show' page -->
-            <a href="/users/<%= user._id %>/applications/<%= application._id %>">
-                <%= application.title %> at <%= application.company %>
-            </a>
-          </li>
-        <% }) %>
-      </ul>
-  </body>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <div class="container">
+    <a href="/users/<%=user._id%>/applications/booking-1">
+      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-44577127/original/a43bc870-91dd-4107-be5d-ed441418e42b.jpeg?im_w=1200" alt="Image 1">
+    </a>
+    <a href="/users/<%=user._id%>/applications/booking-2">
+      <img src="https://a0.muscache.com/im/pictures/ff7b0866-567c-479a-840c-c31e6e16cf9c.jpg?im_w=720" alt="Image 2">
+    </a>
+    <a href="//users/<%=user._id%>/applications/booking-3">
+      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-44577127/original/a43bc870-91dd-4107-be5d-ed441418e42b.jpeg?im_w=1200" alt="Image 1">
+    </a>
+    <a href="//users/<%=user._id%>/applications/booking-4">
+      <img src="https://example.com/image2b.jpg" alt="Image 4">
+    </a>
+  </div>
+</body>
 </html>
-

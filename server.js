@@ -1,11 +1,14 @@
+
 const dotenv = require('dotenv');
 dotenv.config();
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
+const bookingRouter = require('./controllers/booking')
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
@@ -27,7 +30,8 @@ mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 // app.use(morgan('dev'));
@@ -53,9 +57,16 @@ app.get('/', (req, res) => {
 
 
 
+
+
+app.use('/applications', applicationsController);
 app.use('/auth', authController);
 app.use(isSignedIn); // add here
 app.use('/users/:userId/applications', applicationsController);
+// app.use('/users/booking', bookingRouter);
+app.get("/users/booking", (req, res) => {
+  res.render("/views/index.ejs");
+});
 
 
 app.listen(port, () => {
