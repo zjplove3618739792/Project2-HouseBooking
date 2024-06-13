@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+}
+.calendar {
+  width: 70%;
+}
+.sidebar {
+  width: 30%;
+  position: relative;
+}
+.my-booking-link {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.image-gallery img {
+  background-image: url('https://images.pexels.com/photos/12314825/pexels-photo-12314825.jpeg');
+  width: 100%;
+  margin-bottom: 10px;
+}
+.calendar-day {
+  width: 14.28%;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+}
+.calendar-day.booked {
+  background-color: gray;
+  pointer-events: none;
+}
+.calendar-day.available {
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
+
+
+
+    

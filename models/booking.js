@@ -1,14 +1,12 @@
 const mongoose = require('mongoose');
 
 const bookingSchema = new mongoose.Schema({
-  startDate: {
-    type: Date,
-    required: true,
-  },
-  endDate: {
-    type: Date,
-    required: true,
-  }
+  houseId: { type: mongoose.Schema.Types.ObjectId, ref: 'House' },
+  date: { type: Date, required: true },
+  status: { type: String, enum: ['available', 'booked'], default: 'available' }
 });
 
-module.exports = mongoose.model('Booking', bookingSchema);
+const Booking = mongoose.model('Booking', bookingSchema);
+
+module.exports = Booking;
+

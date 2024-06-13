@@ -14,3 +14,4 @@ router.post('/', async (req, res) => { // Changed route from '/booking' to '/'
 });
 
 module.exports = router;
+
