@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 // models/user.js
 
 const applicationSchema = new mongoose.Schema({
-  company: {
+  name: {
     type: String,
     required: true,
   },

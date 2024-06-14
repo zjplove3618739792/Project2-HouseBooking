@@ -16,9 +16,7 @@ router.get('/', async (req, res) => {
       res.redirect('/')
     }
   });
-router.get('/new', async (req, res) => {
-    res.render('applications/new.ejs');
-  });
+
 
 
 router.post('/', async (req, res) => {
@@ -39,10 +37,10 @@ router.post('/', async (req, res) => {
     try {
     
       const currentUser = await User.findById(req.session.user._id);
-      console.log('current userfiguguygbircvbkutcuvytivbuycrvbiyrcvuyvg' ,currentUser)
+      console.log('current user' ,currentUser)
     
       const application = currentUser.applications.id(req.params.applicationId);
-      console.log('application srdtfydtfygufdtfyguhugfyguhifyguhij',application)
+      console.log('application ',application)
 
     
       res.render(`applications/${req.params.applicationId}.ejs`, {

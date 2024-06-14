@@ -1,0 +1,2 @@
+MONGODB_URI=mongodb+srv://zjplove3618739792:1234@student-cluster.tvdvwwc.mongodb.net/Project2-HouseBooking?retryWrites=true&w=majority&appName=student-cluster
+SESSION_SECRET=SESSION_SECRET=secret-hi
