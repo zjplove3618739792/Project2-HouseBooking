@@ -1,31 +1,54 @@
-<!-- views/applications/show.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= application.title %></title>
+  <style>
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; 
+      text-align: center; 
+    }
+    .content button {
+      background-color: #ffb6c1;
+      color: #fff;
+      padding: 10px 20px; 
+      border: none; 
+      border-radius: 5px;
+      cursor: pointer; 
+    }
+    .content button:hover {
+      background-color: #ff69b4;
+    }
+
+   
+  </style>
 </head>
 <body>
-  <%- include('../partials/_navbar.ejs') %>
-  <h1><%= application.name %> at <%= application.title %></h1>
-  <% if (application.notes) { %>
-    <p>Notes: <%= application.notes %></p>
-  <% } %>
-  <% if (application.postingLink) { %>
-    <a href="<%= application.postingLink %>">Visit this job posting</a>
-  <% } %>
-  <p>The status of this application is: <%= application.status %></p>
-
-  <form
-    action="/users/<%= user._id %>/applications/<%= application._id %>?_method=DELETE"
-    method="POST"
-  >
-    <button type="submit">Delete this application</button>
-  </form>
+  <div class="navbar">
+    <%- include('../partials/_navbar.ejs') %>
+  </div>
+  <div class="content">
+    <h1><%= application.name %> , you successfully booked the house on <%= application.title %></h1>
+    <% if (application.notes) { %>
+      <p>Notes: <%= application.notes %></p>
+    <% } %>
+    <% if (application.postingLink) { %>
+      <a href="<%= application.postingLink %>">Visit this job posting</a>
+    <% } %>
+    <form action="/users/<%= user._id %>/applications/<%= application._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete this booking</button>
+    </form>
+  </div>
 </body>
 </html>
+
+
+
 
 
 

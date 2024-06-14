@@ -62,9 +62,8 @@ app.get('/', (req, res) => {
 
 app.use('/applications', applicationsController);
 app.use('/auth', authController);
-app.use(isSignedIn); // add here
+app.use(isSignedIn); 
 app.use('/users/:userId/applications', applicationsController);
-// app.use('/users/booking', bookingRouter);
 app.get("/users/booking", (req, res) => {
   res.render("/views/index.ejs");
 });

@@ -31,8 +31,8 @@ body {
 
 .container img {
   width: 100%;
-  height: 200px; /* Set a fixed height */
-  object-fit: cover; /* This will crop images to fit the container */
+  height: 200px; 
+  object-fit: cover; 
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s;
@@ -41,4 +41,3 @@ body {
 .container img:hover {
   transform: scale(1.05);
 }
-

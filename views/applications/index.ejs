@@ -1,36 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Skyrockit</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>HouseBooking</title>
+  <link rel="stylesheet" href="/stylesheets/style1.css">
 </head>
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <div class="container">
-    <a href="/users/<%=user._id%>/applications/booking-1">
-      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-44577127/original/a43bc870-91dd-4107-be5d-ed441418e42b.jpeg?im_w=1200" alt="Image 1">
-    </a>
-    <a href="/users/<%=user._id%>/applications/booking-2">
-      <img src="https://a0.muscache.com/im/pictures/ff7b0866-567c-479a-840c-c31e6e16cf9c.jpg?im_w=720" alt="Image 2">
-    </a>
-    <a href="/users/<%=user._id%>/applications/booking-3">
-      <img src="https://a0.muscache.com/im/pictures/ff7b0866-567c-479a-840c-c31e6e16cf9c.jpg?im_w=720" alt="Image 3">
-    </a>
-    <a href="/users/<%=user._id%>/applications/booking-4">
-      <img src="https://a0.muscache.com/im/pictures/ff7b0866-567c-479a-840c-c31e6e16cf9c.jpg?im_w=720" alt="Image 4">
-    </a>
-    <ul>
-      <% applications.forEach((application)=>{ %>
-        <li>
-          <a href="/users/<%= user._id %>/applications/<%= application._id %>">
-            <%= application.name %> at <%= application.title %>
-           </a>
-        </li>
-      <% }) %>
-    </ul>
+    <div class="image-gallery">
+      <a href="/users/<%= user._id %>/applications/booking-1">
+        <img src="https://a0.muscache.com/im/pictures/miso/Hosting-44577127/original/a43bc870-91dd-4107-be5d-ed441418e42b.jpeg?im_w=1200" alt="Image 1">
+      </a>
+      <a href="/users/<%= user._id %>/applications/booking-2">
+        <img src="https://a0.muscache.com/im/pictures/ff7b0866-567c-479a-840c-c31e6e16cf9c.jpg?im_w=720" alt="Image 2">
+      </a>
+      <a href="/users/<%= user._id %>/applications/booking-3">
+        <img src="https://a0.muscache.com/im/pictures/ff7b0866-567c-479a-840c-c31e6e16cf9c.jpg?im_w=720" alt="Image 3">
+      </a>
+      <a href="/users/<%= user._id %>/applications/booking-4">
+        <img src="https://a0.muscache.com/im/pictures/ff7b0866-567c-479a-840c-c31e6e16cf9c.jpg?im_w=720" alt="Image 4">
+      </a>
+    </div>
+    <div class="application-details">
+      <ul>
+        <% applications.forEach((application) => { %>
+          <li>
+            <a href="/users/<%= user._id %>/applications/<%= application._id %>">
+              <%= application.name %>, you successfully booked the house on <%= application.title %>
+            </a>
+          </li>
+        <% }) %>
+      </ul>
+    </div>
   </div>
 </body>
 </html>

@@ -13,11 +13,11 @@ body {
   justify-content: space-between;
 }
 .form-side {
-  width: 30%; 
-  padding: 10px; 
+  width: 50%;
+  padding: 20px;
 }
 .picture-side {
-  width: 70%; 
+  width: 50%;
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
@@ -25,7 +25,7 @@ body {
   align-content: start;
 }
 .picture-side img {
-  width: 48%; 
+  width: 48%;
   margin-bottom: 4%;
 }
 form {
@@ -35,7 +35,7 @@ form {
 }
 form label, form input, form textarea, form button {
   width: 100%;
-  margin: 5px 0; 
+  margin: 10px 0;
 }
 input[type="text"], textarea {
   padding: 8px;
@@ -44,26 +44,22 @@ input[type="text"], textarea {
 }
 textarea {
   resize: none;
-  height: 80px; 
 }
 button {
-  padding: 8px; 
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
   border: none;
   border-radius: 4px;
-  background-color: #ffb6c1;
-  color: #fff;
   cursor: pointer;
-  font-size: 14px; 
-  width: 40%; 
 }
-
-button:hover {
-  background-color: #ff69b4;
-}
-
 input:focus, textarea:focus {
-  box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
-  cursor: pointer;
+  background-color: #ffcccb;
 }
 
 
+
+
+
+
+    

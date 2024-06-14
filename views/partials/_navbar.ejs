@@ -1,12 +1,32 @@
-<!-- views/partials/_navbar.ejs -->
 
-<nav>
-    <% if(user) { %>
-      <a href="/users/<%=user._id%>/applications">Your Apps</a>
-      <a href="/auth/sign-out">Sign Out</a>
-    <% } else { %>
-      <a href="/auth/sign-in">Sign In</a>
-      <a href="/auth/sign-up">Sign Up</a>
-    <% } %>
-  </nav>
-  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Example</title>
+    <style>
+        .nav-button {
+          color: #007bff;
+    text-decoration: none;
+    font-weight: normal;
+        .nav-button:last-child {
+            margin-right: 0; 
+        }
+   
+   
+  }
+    </style>
+</head>
+<body>
+    <nav>
+        <% if(user) { %>
+            <a href="/users/<%=user._id%>/applications" class="nav-button">House Booking</a>
+            <a href="/auth/sign-out" class="nav-button">Sign Out</a>
+        <% } else { %>
+            <a href="/auth/sign-in" class="nav-button">Sign In</a>
+            <a href="/auth/sign-up" class="nav-button">Sign Up</a>
+        <% } %>
+    </nav>
+</body>
+</html> 
