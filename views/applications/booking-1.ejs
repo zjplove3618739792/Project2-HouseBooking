@@ -4,33 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking Calendar</title>
- <!-- views/applications/new.ejs -->
-<%- include('../partials/_navbar.ejs') %>
-<form action="/users/<%= user._id %>/applications" method="POST">
-  <label for="name">Name:</label>
-  <input type="text" name="name" id="name">
-  
-  <label for="title">Title:</label>
-  <input type="text" name="title" id="title">
-  
-  <label for="notes">Notes:</label>
-  <textarea name="notes" id="notes"></textarea>
-  
-  <label for="postingLink">Posting Link:</label>
-  <input type="text" name="postingLink" id="postingLink">
-  
-  <label for="status">Status:</label>
-  <select id="status" name="status">
-    <option value="interested">Interested</option>
-    <option value="applied">Applied</option>
-    <option value="interviewing">Interviewing</option>
-    <option value="rejected">Rejected</option>
-    <option value="accepted">Accepted</option>
-  </select>
-  <button type="submit">Add Application</button>
-</form>
-
-
+  <link rel="stylesheet" href="/stylesheets/booking1.css">
+</head>
+<body>
+  <div class="container">
+    <div class="picture-side">
+      <!-- Add your images here -->
+      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-44577127/original/a43bc870-91dd-4107-be5d-ed441418e42b.jpeg?im_w=1200" alt="Image 1">
+      <img src="https://a0.muscache.com/im/pictures/miso/Hosting-44577127/original/a43bc870-91dd-4107-be5d-ed441418e42b.jpeg?im_w=1200" alt="Image 2">
+      <!-- Add more images as needed -->
+    </div>
+    <div class="form-side">
+      <%- include('../partials/_navbar.ejs') %>
+      <form action="/users/<%= user._id %>/applications" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        
+        <label for="title">Date You Want to Book:</label>
+        <input type="text" name="title" id="title">
+        
+        <label for="notes">Notes:</label>
+        <textarea name="notes" id="notes"></textarea>
+        
+        <button type="submit">Book</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
+
 

@@ -22,6 +22,15 @@
     <a href="/users/<%=user._id%>/applications/booking-4">
       <img src="https://a0.muscache.com/im/pictures/ff7b0866-567c-479a-840c-c31e6e16cf9c.jpg?im_w=720" alt="Image 4">
     </a>
+    <ul>
+      <% applications.forEach((application)=>{ %>
+        <li>
+          <a href="/users/<%= user._id %>/applications/<%= application._id %>">
+            <%= application.name %> at <%= application.title %>
+           </a>
+        </li>
+      <% }) %>
+    </ul>
   </div>
 </body>
 </html>
