@@ -12,6 +12,16 @@ body {
   align-items: flex-start;
   justify-content: space-between;
 }
+.container img {
+  cursor: pointer;
+transition: transform 0.7s;
+}
+
+
+.container img:hover {
+  transform: scale(1.05);
+}
+
 .form-side {
   width: 30%; 
   padding: 10px; 
@@ -24,6 +34,7 @@ body {
   justify-content: space-around;
   align-content: start;
 }
+
 .picture-side img {
   width: 48%; 
   margin-bottom: 4%;

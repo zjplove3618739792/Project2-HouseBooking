@@ -6,6 +6,7 @@ body {
   display: flex;
   justify-content: flex-end;
   padding: 10px;
+  
 }
 
 
@@ -41,7 +42,7 @@ body {
   object-fit: cover; 
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.4s;
 }
 
 .container img:hover {

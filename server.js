@@ -1,20 +1,20 @@
 
 const dotenv = require('dotenv');
 dotenv.config();
-const express = require('express');
-const bodyParser = require('body-parser');
+const express = require('express');   
+// application framework      
+
 const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
+// cookie
 
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 
 const authController = require('./controllers/auth.js');
-
-
 const applicationsController = require('./controllers/applications.js');
 
 
@@ -31,11 +31,10 @@ mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
-// app.use(morgan('dev'));
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -48,10 +47,8 @@ app.use(passUserToView);
 app.get('/', (req, res) => {
   // Check if the user is logged in
   if (req.session.user) {
-    // Redirect logged-in users to their applications index
     res.redirect(`/users/${req.session.user._id}/applications`);
   } else {
-    // Show the homepage for users who are not logged in
     res.render('index.ejs');
   }
 });

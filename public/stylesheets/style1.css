@@ -30,23 +30,25 @@ body {
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.4s;
 }
 
 .image-gallery img:hover {
   transform: scale(1.05);
 }
 
-.application-details {
-  width: 100%;
+.application {
+  width: 50%;
   margin-top: 250px; 
   text-align: center; 
+  border-color: #ff69b4;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
 }
 
-.application-details ul {
+.application ul {
   padding: 0;
 }
 
-.application-details li {
+.application li {
   list-style-type: none; 
 }
