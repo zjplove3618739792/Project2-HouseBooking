@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create a Fruit</title>
-  </head>
-  <body>
-    <h1>Create a New Fruit!3</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Calendar</title>
+  <link rel="stylesheet" href="/stylesheets/booking3.css">
+</head>
+<body>
+  <div class="container">
+    <div class="picture-side">
+    
+      <img src="https://a0.muscache.com/im/pictures/361a3a98-f697-4429-aeb7-3b3939d74bef.jpg?im_w=960" alt="Image 1">
+      <img src="https://a0.muscache.com/im/pictures/2966df31-267d-41a0-a34a-471cfb870b64.jpg?im_w=720" alt="Image 2">
+      <img src="https://a0.muscache.com/im/pictures/930fdeb5-4747-4b12-b99c-a790872f2f4d.jpg?im_w=720" alt="Image 2">
+      <img src="https://a0.muscache.com/im/pictures/6e413e83-5b39-44eb-b589-8b368e297786.jpg?im_w=720" alt="Image 2">
+      
+      
+    </div>
+    <div class="form-side">
+      <%- include('../partials/_navbar.ejs') %>
+      <form action="/users/<%= user._id %>/applications" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        
+        <label for="title">Date You Want to Book:</label>
+        <input type="text" name="title" id="title">
+        
+        <label for="notes">Notes:</label>
+        <textarea name="notes" id="notes"></textarea>
+        
+        <button type="submit">Book</button>
+      </form>
+    </div>
+  </div>
+</body>
 </html>
-

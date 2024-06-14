@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create a Fruit</title>
-  </head>
-  <body>
-    <h1>Create a New Fruit!4</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Calendar</title>
+  <link rel="stylesheet" href="/stylesheets/booking4.css">
+</head>
+<body>
+  <div class="container">
+    <div class="picture-side">
+    
+      <img src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1155693327373557913/original/c5f67049-cd5b-4019-9915-dca2914eef38.jpeg?im_w=960" alt="Image 1">
+      <img src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1155693327373557913/original/0d5ae9f1-c6a6-446e-a1df-3c88bc0c0b5f.jpeg?im_w=720" alt="Image 2">
+      <img src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1155693327373557913/original/fe5a9979-f248-49cf-a083-0113b2bfc7fc.jpeg?im_w=720" alt="Image 2">
+      <img src="https://a0.muscache.com/im/pictures/prohost-api/Hosting-1155693327373557913/original/b24c296c-138b-4093-bf71-3cca7af67394.jpeg?im_w=720" alt="Image 2">
+      
+      
+    </div>
+    <div class="form-side">
+      <%- include('../partials/_navbar.ejs') %>
+      <form action="/users/<%= user._id %>/applications" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        
+        <label for="title">Date You Want to Book:</label>
+        <input type="text" name="title" id="title">
+        
+        <label for="notes">Notes:</label>
+        <textarea name="notes" id="notes"></textarea>
+        
+        <button type="submit">Book</button>
+      </form>
+    </div>
+  </div>
+</body>
 </html>
-
