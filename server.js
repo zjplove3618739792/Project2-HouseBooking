@@ -32,6 +32,9 @@ mongoose.connection.on('connected', () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
+
+
+// used in an Express.js application to set up middleware 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 

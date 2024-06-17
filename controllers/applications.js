@@ -4,6 +4,9 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user.js');
 
+
+
+// landing page
 router.get('/', async (req, res) => {
     try {
        const currentUser = await User.findById(req.session.user._id);
@@ -16,7 +19,7 @@ router.get('/', async (req, res) => {
     }
   });
 
-
+// add user
 router.post('/', async (req, res) => {
     try {
       const currentUser = await User.findById(req.session.user._id);
@@ -28,6 +31,7 @@ router.post('/', async (req, res) => {
       res.redirect('/')
     }
   });
+
 
 router.get('/booking-1', async (req, res) => {
   res.render('applications/booking-1.ejs');
@@ -43,6 +47,8 @@ router.get('/booking-4', async (req, res) => {
   res.render('applications/booking-4.ejs');
 });
 
+
+// Show.EJS check the userinformation and booking
 router.get('/:applicationId', async (req, res) => {
   try {
     // This part I can look up the user from req.session
@@ -92,25 +98,24 @@ router.delete('/:applicationId', async (req, res) => {
 //   });
 
 
-router.put('/:applicationId', async (req, res) => {
-    try {
-      // Find the user from req.session
-      const currentUser = await User.findById(req.session.user._id);
-      // Find the current application from the id supplied by req.params
-      const application = currentUser.applications.id(req.params.applicationId);
-      // Use the Mongoose .set() method, updating the current application to reflect the new form data on `req.body`
-      application.set(req.body);
-      // Save the current user
-      await currentUser.save();
-      // Redirect back to the show view of the current application
-      res.redirect(
-        `/users/${currentUser._id}/applications/${req.params.applicationId}`
-      );
-    } catch (error) {
-      console.log(error);
-      res.redirect('/')
-    }
-  });
+// router.put('/:applicationId', async (req, res) => {
+//     try {
+//       const currentUser = await User.findById(req.session.user._id);
+//       // Find the current application from the id supplied by req.params
+//       const application = currentUser.applications.id(req.params.applicationId);
+//       // Use the Mongoose .set() method, updating the current application to reflect the new form data on `req.body`
+//       application.set(req.body);
+//       // Save the current user
+//       await currentUser.save();
+//       // Redirect back to the show view of the current application
+//       res.redirect(
+//         `/users/${currentUser._id}/applications/${req.params.applicationId}`
+//       );
+//     } catch (error) {
+//       console.log(error);
+//       res.redirect('/')
+//     }
+//   });
   
   
   

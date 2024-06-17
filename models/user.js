@@ -14,13 +14,13 @@ const applicationSchema = new mongoose.Schema({
   notes: {
     type: String,
   },
-  postingLink: {
-    type: String,
-  },
-  status: {
-    type: String,
-    enum: ['interested', 'applied', 'interviewing', 'rejected', 'accepted'],
-  },
+  // postingLink: {
+  //   type: String,
+  // },
+  // status: {
+  //   type: String,
+  //   enum: ['interested', 'applied', 'interviewing', 'rejected', 'accepted'],
+  // },
 });
 
 
